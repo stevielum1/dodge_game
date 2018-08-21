@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <script src="./js/bundle.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  </head>
+  <body>
+    <div class="settings-container">
+      <div class="settings-nav">
+        <button id="sandbox">Sandbox</button>
+        <button id="story">Story</button>
+      </div>
+      <div class="settings">
+        <label>Number of bullets
+          <input id="num-bullets" type="text" value=100 />
+        </label>
+        <label> Bullet Speed
+          <input id="bullet-speed" type="text" value=10 />
+        </label>
+        <label> Bullet Radius
+          <input id="bullet-radius" type="text" value=10 />
+        </label>
+        <label> Player Speed
+          <input id="player-speed" type="text" value=20 />
+        </label>
+        <label> Player Radius
+          <input id="player-radius" type="text" value=3 />
+        </label>
+      </div>
+      <div class="color-settings">
+        <label> Bullet Fill Color
+          <input id="bullet-fill-color" type="color" value=#ff0000 />
+        </label>
+        <label> Bullet Stroke Color
+          <input id="bullet-stroke-color" type="color" value=#000000 />
+        </label>
+        <label> Player Fill Color
+          <input id="player-fill-color" type="color" value=#0000ff />
+        </label>
+        <label> Player Stroke Color
+          <input id="player-stroke-color" type="color" value=#000000 />
+        </label>
+        <label> Background Color
+          <input id="background-color" type="color" value=#ffffff />
+        </label>
+      </div>
+    </div>
+    <br>
+    <div class="canvas-container">
+      <div class="instructions">
+        <div class="display">
+          <h2 id="level"></h2>
+          <h2 id="timer"></h2>
+        </div>
+        <p id="lives"></p>
+        <p>Dodge the bullets!</p>
+        <p>Two second invincibility on restart</p>
+        <br>
+        <p>WASD to move</p>
+        <p>Hold Shift to slow down</p>
+        <p>R to restart level (or to level 1 with no lives)</p>
+      </div>
+      <canvas id="myCanvas" width=500 height=500></canvas>
+    </div>
+  </body>
+</html>
