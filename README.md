@@ -10,10 +10,10 @@ Or you can play around in sandbox mode if you want.
 
 #### Controls: <br>
 `W` `A` `S` `D` to move <br>
-Hold `Shift` to slow down
+Hold `Shift` to slow down <br>
 `R` to restart (will restart the current level if you have lives, else will restart from level 1)
 
-##### Setup
+#### Setup
 1. `git clone https://github.com/stevielum1/dodge_game.git`
 2. `npm install`
 3. Open `index.html` in your favorite browser
