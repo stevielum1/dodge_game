@@ -27,10 +27,10 @@ class MovingObject {
   }
 
   isCollidedWith(other) {
-    const xDist = Math.pow(this.pos[0] - other.pos[0], 2);
-    const yDist = Math.pow(this.pos[1] - other.pos[1], 2);
-    const dist = Math.sqrt(xDist + yDist);
-    if (dist < this.radius + other.radius) {
+    const xDist = (this.pos[0] - other.pos[0]) * (this.pos[0] - other.pos[0]);
+    const yDist = (this.pos[1] - other.pos[1]) * (this.pos[1] - other.pos[1]);
+    const dist = (xDist + yDist) * (xDist + yDist);
+    if (dist < (this.radius + other.radius) * (this.radius + other.radius)) {
       return true;
     }
     return false;

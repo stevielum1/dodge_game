@@ -38,6 +38,7 @@ class GameView {
   }
 
   stop() {
+    this.ctx.clearRect(0,0,this.ctx.canvas.width, this.ctx.canvas.height);
     this.intervalIds.forEach(id => {
       window.cancelAnimationFrame(id);
     });
