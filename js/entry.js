@@ -50,6 +50,7 @@ const storyOn = e => {
 
 const restartGame = () => {
   gameView.stop();
+  gameView = null;
 
   if (mode === "sandbox") {
     const numBullets = parseInt(document.getElementById("num-bullets").value);

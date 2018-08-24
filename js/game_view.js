@@ -6,6 +6,7 @@ class GameView {
   constructor(ctx, options) {
     this.ctx = ctx;
     this.game = new Game(ctx, options);
+    this.bindKeyHandlers();
     this.moving = {
       up: false,
       left: false,
@@ -14,7 +15,7 @@ class GameView {
       slowed: false,
     };
     this.playerSpeed = options.playerSpeed / 10 || 2;
-    this.intervalIds = [];
+    this.intervalId = 0;
     this.mode = options.mode || "sandbox";
     if (this.mode === "sandbox") {
       this.startTime = new Date().getTime();
@@ -29,19 +30,17 @@ class GameView {
   }
 
   start() {
-    this.bindKeyHandlers();
-    this.intervalIds.push(window.requestAnimationFrame(this.game.step.bind(this.game)));
-    this.intervalIds.push(window.requestAnimationFrame(this.game.draw.bind(this.game)));
-    this.intervalIds.push(window.requestAnimationFrame(this.updatePlayer.bind(this)));
-    this.intervalIds.push(window.requestAnimationFrame(this.updateTime.bind(this)));
-    this.intervalIds.push(window.requestAnimationFrame(this.nextLevel.bind(this)));
+    this.game.step();
+    this.game.draw();
+    this.updatePlayer();
+    this.updateTime();
+    this.nextLevel();
+    this.intervalId = requestAnimationFrame(this.start.bind(this));
   }
 
   stop() {
     this.ctx.clearRect(0,0,this.ctx.canvas.width, this.ctx.canvas.height);
-    this.intervalIds.forEach(id => {
-      window.cancelAnimationFrame(id);
-    });
+    cancelAnimationFrame(this.intervalId);
   }
 
   updateTime() {
@@ -55,7 +54,6 @@ class GameView {
         timer.innerText = Math.round(-(new Date().getTime() - this.startTime)/100);
       }
     }
-    window.requestAnimationFrame(this.updateTime.bind(this));
   }
 
   nextLevel() {
@@ -63,7 +61,6 @@ class GameView {
     if (this.startTime < new Date().getTime() && this.game.gameOver === false) {
       this.next = true;
     }
-    window.requestAnimationFrame(this.nextLevel.bind(this));
   }
 
   bindKeyHandlers() {
@@ -132,8 +129,6 @@ class GameView {
     } else if (right) {
       this.game.player.moveControlled([speed, 0]);
     }
-
-    window.requestAnimationFrame(this.updatePlayer.bind(this));
   }
 }
 

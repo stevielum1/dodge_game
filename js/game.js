@@ -45,7 +45,6 @@ class Game {
   step() {
     this.moveObjects();
     this.checkCollisions();
-    window.requestAnimationFrame(this.step.bind(this));
   }
 
   draw() {
@@ -53,7 +52,6 @@ class Game {
     this.allObjects().forEach(object => {
       object.draw(this.ctx);
     });
-    window.requestAnimationFrame(this.draw.bind(this));
   }
 
   wrap(pos, obj) {
