@@ -1,5 +1,7 @@
 A small side project written in JavaScript. This is a game that involves dodging bullets, testing your overall scanning time, your reflexes, and your precision.
 
+[Live](https://stevielum1.github.io/dodge_game/)
+
 ![example.png](example.png)
 
 There are a total of 30 levels. You have 3 lives. At the beginning of each round, you will have 2 seconds of invincibility, so act quickly.
