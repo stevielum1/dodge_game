@@ -1,8 +1,6 @@
 const GameView = require("./game_view.js");
 const levels = require("./levels/levels.js");
 
-console.log("it's working");
-
 let gameView;
 let ctx;
 let canvas;

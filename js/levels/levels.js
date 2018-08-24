@@ -28,6 +28,7 @@ const level27 = require("./level_27.js");
 const level28 = require("./level_28.js");
 const level29 = require("./level_29.js");
 const level30 = require("./level_30.js");
+const level31 = require("./level_31.js");
 
 module.exports = {
   1: level1,
@@ -60,4 +61,5 @@ module.exports = {
   28: level28,
   29: level29,
   30: level30,
+  31: level31,
 };

@@ -123,8 +123,6 @@ module.exports = Bullet;
 const GameView = __webpack_require__(/*! ./game_view.js */ "./js/game_view.js");
 const levels = __webpack_require__(/*! ./levels/levels.js */ "./js/levels/levels.js");
 
-console.log("it's working");
-
 let gameView;
 let ctx;
 let canvas;
@@ -1116,6 +1114,32 @@ module.exports = options;
 
 /***/ }),
 
+/***/ "./js/levels/level_31.js":
+/*!*******************************!*\
+  !*** ./js/levels/level_31.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+const options = {
+  numBullets: 30,
+  bulletSpeed: 50,
+  bulletRadius: 30,
+  playerSpeed: 50,
+  playerRadius: 3,
+  bulletFillColor: "#ff0000",
+  bulletStrokeColor: "#000000",
+  playerFillColor: "#0000ff",
+  playerStrokeColor: "#000000",
+  mode: "story",
+  level: 31
+};
+
+module.exports = options;
+
+
+/***/ }),
+
 /***/ "./js/levels/level_4.js":
 /*!******************************!*\
   !*** ./js/levels/level_4.js ***!
@@ -1309,6 +1333,7 @@ const level27 = __webpack_require__(/*! ./level_27.js */ "./js/levels/level_27.j
 const level28 = __webpack_require__(/*! ./level_28.js */ "./js/levels/level_28.js");
 const level29 = __webpack_require__(/*! ./level_29.js */ "./js/levels/level_29.js");
 const level30 = __webpack_require__(/*! ./level_30.js */ "./js/levels/level_30.js");
+const level31 = __webpack_require__(/*! ./level_31.js */ "./js/levels/level_31.js");
 
 module.exports = {
   1: level1,
@@ -1341,6 +1366,7 @@ module.exports = {
   28: level28,
   29: level29,
   30: level30,
+  31: level31,
 };
 
 
